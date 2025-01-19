@@ -1,0 +1,41 @@
+{% extends "Base.html" %}
+{% block content %}
+
+<h1> This is All Products Page </h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product code</th>
+            <th>Price</th>
+            <th>GST</th>
+            <th>Qty</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        
+        
+    </thead>
+    <tbody>
+        {% for product in All_Products %}
+            <tr>
+                <td>{{product.product_name}}</td>
+                <td>{{product.product_code}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.gst}}</td>
+                <td>{{product.qty}}</td>
+                <td><button>Update</button></td>
+                <td>
+                    <a href="{% url 'url_product_delete' product.id %}">
+                        <button>Delete</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}
