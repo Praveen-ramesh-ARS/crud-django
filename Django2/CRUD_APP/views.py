@@ -48,3 +48,19 @@ def DeleteProducts(request,id):
 
     return redirect('/crud_app/products/')
 
+#Update btn
+def UpdateProducts(request,id):
+    update_product = Product.objects.get(id = id)
+
+    context = {
+        "product_form" : Product_Form(instance=update_product)
+    }
+    if request.method == "POST":
+        update_btn =  Product_Form(request.POST,instance=update_product)
+        if update_btn.is_valid():
+            update_btn.save()
+
+            return redirect('/crud_app/products/')
+
+        
+    return render(request,"AddProducts.html",context)

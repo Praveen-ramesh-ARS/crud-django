@@ -25,7 +25,11 @@
                 <td>{{product.price}}</td>
                 <td>{{product.gst}}</td>
                 <td>{{product.qty}}</td>
-                <td><button>Update</button></td>
+                <td>
+                    <a href="{% url 'url_product_update' product.id %}">
+                        <button>update</button>
+                    </a>
+                </td>
                 <td>
                     <a href="{% url 'url_product_delete' product.id %}">
                         <button>Delete</button>
