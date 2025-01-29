@@ -1,0 +1,44 @@
+{% extends "Base.html" %}
+{% block content %}
+
+<h1> This is All Products Page </h1>
+<a href = "/orders/add/customer/"  >
+    <button class="btn btn-primary">Add customers</button>
+</a>
+<hr >
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Since</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        
+        
+    </thead>
+    <tbody>
+        {% for customer in All_Customer %}
+            <tr>
+                <td>{{customer.customer_name}}</td>
+                <td>{{customer.customer_since}}</td>
+             
+                <td>
+                    <a href="{% url 'url_customer_update' customer.id %}">
+                        <button>update</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'url_customer_delete' customer.id %}">
+                        <button>Delete</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+{% endblock %}
