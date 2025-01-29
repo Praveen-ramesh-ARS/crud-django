@@ -1,0 +1,99 @@
+git - is a software technology, version controller 
+GitHub - layer software of git
+
+repository - place of storing the code is called repository
+
+local repo - system files are called
+cloud repo - all files are in cloud is called 
+---------------------------
+echo "# checking" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Praveen-ramesh-ARS/checking.git
+git push -u origin main
+--------------------------
+convenstional msg:
+fix:message
+feat:message
+regfactor:mes
+doc:mess
+chore:mess #nothing importent
+!fix:breaking Mess
+
+--------------------------
+git init -creating git environment
+git clone - local repo
+
+PS D:\Git\Git_Repo> git config --global user.name "praveen-ramesh-ARS"
+PS D:\Git\Git_Repo> git config --global user.email "visit.praveen47@gmail.com"
+PS D:\Git\Git_Repo> git clone https://github.com/Praveen-ramesh-ARS/checking.git
+git clone https://github.com/Praveen-ramesh-ARS/crud-django.git                         
+
+.git - connection link between to cloud and local repo (for push and pull)
+------------------------- -
+git add filename = git add dummy.txt (ready to staged)
+
+git commit -m "feat: added my name " 
+
+git push orgin remote  = git push orgin main 
+
+git pull
+--------------------------git diff-------------
+git status
+git diff  (for verify or viewing which files are changed)#Not worked.
+
+git add index.html or git add . (all files)
+
+git status
+git commit -m "fix: "changed my name"
+
+git push
+
+or git pull and git push (unchecked)
+-------------------------------------- Working with other developers----------------
+#creating branches..
+git branch  # checking the current branch
+git checkout -b "frontend"  # creating branch folder
+git checkout frontend    # switched the branch
+git add filename
+git commit -m "feat:new file added"
+git push orgin frontend  # origin is a url , and branch_name
+
+git branch 
+git checkout -b "backend"  # creating branch folder
+git checkout backend    # switched the branch
+git add filename
+git commit -m "feat:new file added"
+git push orgin backend  # origin is a url , and branch_name
+-----------------------------
+copy to main branch
+#from branch: frontend
+
+git add .
+git commit -m "fix:msg"
+git push origin main
+-----------------------------
+#merge conflict
+git pull origin main
+accept /incoming/both/compare
+
+git add filename
+git commit -m 'fix:'
+git push origin main
+----------------------------
+git stash
+git pull
+git stash pop
+#conflict and accept
+git add
+git commint
+git push
+------------
+git branch -M "newname" #current branch name has changed.
+
+git pull
+git branch -a  #show the cloud branches
+--------------------------------------
+git log  #show the all the commites in terminal
